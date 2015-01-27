@@ -1,0 +1,9 @@
+# telescope = 2.0M ALFRED JENSCH TELESCOPE
+# instrument = TLS
+# observatory = TAUTENBERG, GERMANY
+# reference = DELEUIL ET AL. 2008 (A&A, 491, 889)
+# bibcode = 2008A&A...491..889D
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0300/0300074/data/UID_0300074_RVC_005.tbl
+  2454331.3590           -57.130                         0.250
+  2454332.3600           -54.460                         0.290
+  2454336.9060           -53.650                         0.240

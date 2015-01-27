@@ -1,0 +1,11 @@
+# telescope = 3.0M SHANE
+# instrument = HAMILTON ECHELLE SPECTROGRAPH
+# observatory = LICK OBSERVATORY, CALIFORNIA
+# reference = FISCHER ET AL. 1999 (PASP, 111, 50)
+# bibcode = 1999PASP..111...50F
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0100/0100970/data/UID_0100970_RVC_005.tbl
+   2451004.874            270.61                          12.8
+   2451006.883            146.82                          12.8
+   2451026.844            -11.26                          12.8
+   2451027.869            -70.12                          12.8
+   2451045.836            -34.42                          12.8

@@ -1,0 +1,8 @@
+# telescope = 10M KECK I
+# instrument = HIRES
+# observatory = MANUA KEA, HAWAII
+# reference = KONACKI ET AL. 2003 (APJ, 597, 1076)
+# bibcode = 2003APJ...597.1076K
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0300/0300001/data/UID_0300001_RVC_003.tbl
+  2452481.79455              0.09                          0.06
+  2452483.75773             -0.09                          0.05

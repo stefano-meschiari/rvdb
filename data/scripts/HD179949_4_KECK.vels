@@ -1,0 +1,9 @@
+# telescope = 10M KECK I
+# instrument = HIRES
+# observatory = MAUNA KEA, HAWAII
+# reference = TINNEY ET AL. 2001 (APJ, 551, 507)
+# bibcode = 2001APJ...551..507T
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0094/0094645/data/UID_0094645_RVC_004.tbl
+  2451792.751             122.2                           2.6
+  2451793.798             -80.7                           2.5
+  2451795.803             115.6                           2.5

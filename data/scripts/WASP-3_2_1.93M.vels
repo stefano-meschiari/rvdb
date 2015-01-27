@@ -1,0 +1,13 @@
+# telescope = 1.93M
+# instrument = SOPHIE
+# observatory = OBSERVATOIRE DE HAUTE PROVENCE (OHP), FRANCE
+# reference = POLLACCO ET AL. 2008 (MNRAS, 385, 1576)
+# bibcode = 2008MNRAS.385.1576P
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0300/0300056/data/UID_0300056_RVC_001.tbl
+  2454286.5225            -5.751                         0.018
+  2454287.4563            -5.254                         0.020
+  2454289.3662            -5.259                         0.018
+  2454340.3251            -5.648                         0.013
+  2454341.3989            -5.406                         0.015
+  2454342.3198            -5.544                         0.019
+  2454343.4825            -5.638                         0.013

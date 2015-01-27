@@ -1,0 +1,15 @@
+# telescope = 1.0M
+# instrument = CORAVEL
+# observatory = OBSERVATOIRE DE HAUTE PROVENCE (OHP), FRANCE
+# reference = CORREIA ET AL. 2008 (A&A, 479, 271)
+# bibcode = 2008A&A...479..271C
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0101/0101966/data/UID_0101966_RVC_002.tbl
+  2445150.629000         -34.46000                       0.39000
+  2445258.356000         -34.07000                       0.35000
+  2445527.557000         -34.43000                       0.36000
+  2447039.387000         -31.89000                       0.33000
+  2447381.526000         -31.91000                       0.34000
+  2448920.259000         -30.85000                       0.41000
+  2450308.461000         -30.37000                       0.38000
+  2450659.505000         -30.23000                       0.39000
+  2450663.490000         -30.44000                       0.39000

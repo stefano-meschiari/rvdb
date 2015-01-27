@@ -1,0 +1,14 @@
+# telescope = 1.93M
+# instrument = ELODIE
+# observatory = OBSERVATOIRE DE HAUTE PROVENCE (OHP), FRANCE
+# reference = DA SILVA ET AL. 2006 (A&A, 446, 717)
+# bibcode = 2006A&A...446..717D
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0081/0081022/data/UID_0081022_RVC_001.tbl
+  2453550.4467            12.226                         0.013
+  2453554.4224            12.174                         0.010
+  2453587.3709            12.232                         0.014
+  2453589.3393            11.880                         0.013
+  2453592.3736            12.102                         0.012
+  2453611.3172            12.121                         0.010
+  2453613.3130            11.992                         0.010
+  2453614.3141            11.928                         0.010

@@ -1,0 +1,13 @@
+# Data from http://exoplanetarchive.ipac.caltech.edu/
+
+Name	HD 41004 A
+Mass	1
+HD	HD 41004 A
+HIP	HIP 28393 A
+Teff	5010
+RA	 89.956871
+Dec	-48.239693
+
+RV[]	HD41004A_1_EULER.vels
+RV[]	HD41004A_2_EULER.vels
+RV[]	HD41004A_3_EULER.vels

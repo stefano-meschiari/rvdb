@@ -1,0 +1,19 @@
+# Data from http://exoplanetarchive.ipac.caltech.edu/
+
+Name	HD 217107
+Mass	1
+HD	HD 217107
+HIP	HIP 113421
+Teff	5646
+RA	344.564758
+Dec	 -2.395385
+
+RV[]	HD217107_1_LICK.vels
+RV[]	HD217107_2_KECK.vels
+RV[]	HD217107_3_KECK.vels
+RV[]	HD217107_4_HJS.vels
+RV[]	HD217107_5_KECK.vels
+RV[]	HD217107_6_LICK.vels
+RV[]	HD217107_7_KECK.vels
+RV[]	HD217107_8_0.6M_CAT.vels
+RV[]	HD217107_9_EULER.vels

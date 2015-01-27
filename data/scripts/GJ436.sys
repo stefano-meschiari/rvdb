@@ -1,0 +1,13 @@
+# Data from http://exoplanetarchive.ipac.caltech.edu/
+
+Name	GJ 436
+Mass	1
+HD	
+HIP	HIP 57087
+Teff	3416
+RA	175.546219
+Dec	 26.706570
+
+RV[]	GJ436_1_KECK.vels
+RV[]	GJ436_2_KECK.vels
+RV[]	GJ436_3_KECK.vels

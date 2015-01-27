@@ -1,0 +1,19 @@
+# telescope = 3.9M ANGLO-AUSTRALIAN TELESCOPE (AAT)
+# instrument = UCLES
+# observatory = SIDING SPRING OBSERVATORY, AUSTRALIA
+# reference = BUTLER ET AL. 2001 (APJ, 555, 410)
+# bibcode = 2001APJ...555..410B
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0012/0012653/data/UID_0012653_RVC_001.tbl
+  2451118.1146             -55.1                           4.4
+  2451235.9437              39.5                           5.0
+  2451383.2779             -71.5                           7.4
+  2451413.2245             -72.3                           6.2
+  2451473.1000               0.0                           4.8
+  2451525.9348              47.9                           4.6
+  2451526.9763              76.1                           5.9
+  2451743.3364             -32.3                           5.9
+  2451745.2936             -50.1                           5.0
+  2451828.1295              66.7                           5.6
+  2451856.1093              62.5                           5.3
+  2451856.9355              44.5                           8.6
+  2451918.9703              -2.7                           5.4
