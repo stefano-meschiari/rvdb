@@ -1,0 +1,11 @@
+# telescope = 8.2M KUEYEN (UT2)
+# instrument = UVES+FLAMES
+# observatory = ESO VLT, PARANAL OBSERVATORY, CHILE
+# reference = BOUCHY ET AL. 2004 (A&A, 421, L13)
+# bibcode = 2004A&A...421L..13B
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0300/0300004/data/UID_0300004_RVC_001.tbl
+  2453081.72913            39.724                         0.045
+  2453082.64054            39.700                         0.049
+  2453083.70038            39.564                         0.044
+  2453084.61585            39.822                         0.047
+  2453085.64254            39.493                         0.045

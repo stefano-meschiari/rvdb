@@ -1,0 +1,14 @@
+# telescope = 0.6M CAT
+# instrument = HAMILTON ECHELLE SPECTROGRAPH
+# observatory = LICK OBSERVATORY, CALIFORNIA
+# reference = FISCHER ET AL. 1999 (PASP, 111, 50)
+# bibcode = 1999PASP..111...50F
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0113/0113421/data/UID_0113421_RVC_001.tbl
+   2451076.800            -35.83                             6
+   2451077.872            -56.74                             6
+   2451078.817              0.00                             6
+   2451079.724             71.96                             6
+   2451079.859             92.17                             6
+   2451081.743            225.55                             6
+   2451100.756             35.90                             6
+   2451101.759            127.44                             6

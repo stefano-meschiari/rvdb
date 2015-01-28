@@ -1,0 +1,14 @@
+# telescope = 8.2M KEUYEN (UT2)
+# instrument = FLAMES
+# observatory = ESO VLT, PARANAL OBSERVATORY, CHILE
+# reference = PONT ET AL. 2005 (A&A, 438, 1123)
+# bibcode = 2005A&A...438.1123P
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0300/0300002/data/UID_0300002_RVC_002.tbl
+  2453078.60420            25.111                         0.045
+  2453079.64235            25.163                         0.046
+  2453080.65958            25.220                         0.069
+  2453081.59492            25.106                         0.091
+  2453082.71280            25.029                         0.042
+  2453083.66469            25.175                         0.056
+  2453084.65149            25.219                         0.033
+  2453085.60721            25.149                         0.037

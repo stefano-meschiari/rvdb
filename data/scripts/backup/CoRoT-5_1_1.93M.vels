@@ -1,0 +1,12 @@
+# telescope = 1.93M
+# instrument = SOPHIE
+# observatory = OBSERVATOIRE DE HAUTE PROVENCE (OHP), FRANCE
+# reference = RAUER ET AL. 2009 (A&A, 506, 281)
+# bibcode = 2009A&A...506..281R
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0300/0300076/data/UID_0300076_RVC_002.tbl
+  2454463.4939000            48.947                         0.017
+  2454465.5247100            48.816                         0.028
+  2454506.3770000            48.767                         0.016
+  2454525.3478500            48.860                         0.020
+  2454528.2886100            48.933                         0.031
+  2454544.3463300            48.925                         0.026

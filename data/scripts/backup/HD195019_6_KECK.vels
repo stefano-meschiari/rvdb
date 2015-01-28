@@ -1,0 +1,13 @@
+# telescope = 10M KECK I
+# instrument = HIRES
+# observatory = MAUNA KEA, HAWAII
+# reference = FISCHER ET AL. 1999 (PASP, 111, 50)
+# bibcode = 1999PASP..111...50F
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0100/0100970/data/UID_0100970_RVC_004.tbl
+   2451068.852           -222.53                             6
+   2451069.893           -185.77                             6
+   2451070.913           -106.85                             6
+   2451071.849              0.00                             6
+   2451072.837             92.42                             6
+   2451074.857            244.19                             6
+   2451075.795            292.32                             6

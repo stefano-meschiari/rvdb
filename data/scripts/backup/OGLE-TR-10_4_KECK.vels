@@ -1,0 +1,15 @@
+# telescope = 10M KECK I
+# instrument = HIRES
+# observatory = MAUNA KEA, HAWAII
+# reference = KONACKI ET AL. 2005 (APJ, 624, 372)
+# bibcode = 2005APJ...624..372K
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0300/0300001/data/UID_0300001_RVC_004.tbl
+  2452481.7946            -6.130                         0.058
+  2452483.7578            -6.296                         0.057
+  2452853.7813            -6.247                         0.048
+  2452855.8454            -6.340                         0.059
+  2452864.7786            -6.304                         0.054
+  2453206.7856            -6.223                         0.097
+  2453207.7794            -6.152                         0.056
+  2453208.7772            -6.380                         0.070
+  2453209.7727            -6.254                         0.056

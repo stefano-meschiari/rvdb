@@ -1,0 +1,17 @@
+# telescope = 1.93M
+# instrument = SOPHIE
+# observatory = OBSERVATOIRE DE HAUTE PROVENCE (OHP), FRANCE
+# reference = HUSNOO ET AL. 2010 (ARXIV, 1004, 1809)
+# bibcode = 2010ARXIV1004.1809H
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0300/0300070/data/UID_0300070_RVC_001.tbl
+  2454885.65165           -5.5847                        0.0107
+  2454886.57106           -4.7678                        0.0111
+  2454886.68397           -4.4453                        0.0106
+  2454888.61655           -5.3910                        0.0104
+  2454888.68715           -5.1660                        0.0107
+  2454889.65818           -4.4914                        0.0107
+  2454890.66568           -5.8442                        0.0106
+  2454911.59331           -4.0451                        0.0116
+  2454912.55658           -5.5238                        0.0114
+  2454913.57244           -4.5271                        0.0061
+  2454915.57681           -5.2325                        0.0122

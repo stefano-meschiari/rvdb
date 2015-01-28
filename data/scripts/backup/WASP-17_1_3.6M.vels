@@ -1,0 +1,9 @@
+# telescope = 3.6M
+# instrument = HARPS
+# observatory = ESO LA SILLA, CHILE
+# reference = ANDERSON ET AL. 2010 (APJ, 709, 159)
+# bibcode = 2010APJ...709..159A
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0300/0300091/data/UID_0300091_RVC_002.tbl
+  2454564.8195          -49.4884                        0.0108
+  2454565.8731          -49.4356                        0.0092
+  2454567.8516          -49.5368                        0.0105

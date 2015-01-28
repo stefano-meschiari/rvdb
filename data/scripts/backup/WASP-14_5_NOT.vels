@@ -1,0 +1,12 @@
+# telescope = 2.5M NORDIC OPTICAL TELESCOPE (NOT)
+# instrument = FIES
+# observatory = LA PALMA, SPAIN
+# reference = JOSHI ET AL. 2009 (MNRAS, 392, 1532)
+# bibcode = 2009MNRAS.392.1532J
+# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0300/0300070/data/UID_0300070_RVC_004.tbl
+  2454461.7400           -5.8705                        0.0080
+  2454462.7710           -4.1180                        0.0054
+  2454465.7490           -4.8489                        0.0078
+  2454466.7850           -5.4037                        0.0044
+  2454490.7700           -5.6209                        0.0087
+  2454490.7820           -5.6383                        0.0081
