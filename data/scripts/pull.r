@@ -1,9 +1,11 @@
 # Pulls RV data from the Exoplanet Archive.
 require(stringr)
+source('common.r')
 wait <- 2
 
 if (!exists('plhost.downloaded'))
     plhost.downloaded <- c()
+
 
 planets.table <- function() {
     table <- read.csv(url("http://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"))
@@ -63,7 +65,7 @@ create.db <- function(table) {
 
         host <- str_replace_all(row['pl_hostname'], " ", "")
         
-        cat('Downloading ', row['pl_hostname'], '...')
+        cat('Downloading ', row['pl_hostname'], '...\n')
         conn <- url(sprintf(data.url, URLencode(str_join(row['pl_hostname'], ' ', row['pl_letter']))))
         string <<- str_join(readLines(conn), collapse="\n")
         close(conn)
@@ -79,7 +81,7 @@ create.db <- function(table) {
         cat(file=sys, sprintf("# Data from %s\n\n", table.url))
         cat(file=sys, sprintf("Name\t%s\nMass\t%s\nHD\t%s\nHIP\t%s\nTeff\t%s\nRA\t%s\nDec\t%s\n\n",
                 row['pl_hostname'],
-                if (is.na(row['pl_stmass'])) 1 else row['pl_stmass'],
+                if (is.na(row['st_mass'])) 1 else row['st_mass'],
                 row['hd_name'],
                 row['hip_name'],
                 row['st_teff'],
@@ -101,6 +103,15 @@ create.db <- function(table) {
             bibcode <- extract.prop(lines, "BIBCODE")
             instrument <- extract.prop(lines, "INSTRUMENT")
             observatory <- extract.prop(lines, "OBSERVATORY_SITE")
+            value.units <- extract.prop(lines, "VALUE_UNITS")
+            if (value.units == "km/s") {
+                data <- unname(t(sapply(data, function(data) str_match_all(data, "([0-9\\-\\.]+)")[[1]][,1])))
+                data[,2] <- data[,2] * 1000
+                data[,2] <- data[,2] - median(data[,2])
+                data <- tbl(data)
+                print(data)
+                stop()
+            }
             
             fn <- sprintf("%s_%d_%s.vels",
                          host,

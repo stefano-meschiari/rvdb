@@ -1,24 +1,8 @@
+require(stringr)
+source('commons.r')
+
 JD.start <- 2440000
 
-tbl <- function(t) {
-    return(apply(data[[i]], 1, function(row) {
-                return(str_join(sprintf("%f", row), collapse='\t'))
-            }))
-}
-
-intersections <- function(m) {
-    r <- apply(combn(1:ncol(m), 2), 2, function(pair) {
-        r1 <- m[, pair[1]]
-        r2 <- m[, pair[2]]
-
-        if (r2[1] < r1[2] && r1[1] < r2[2])
-            return(pair)
-        else
-            return(c(NA, NA))
-    })
-
-    return(r[,!is.na(r[1,]), drop=F])
-}
 
 header <- function(h, prop) {
     return(h[str_detect(h, str_join("# ", prop))])
@@ -73,11 +57,14 @@ for (sys.file in sys.files) {
     }
     r <- intersections(time.ranges)
     print(time.ranges)
-    changed <- TRUE
     
     if (!is.null(r)) {
         cat(rep('=', 60), '\n', sep="")
+        remove <- c()
         apply(r, 2, function(p) {
+            if (any(p %in% remove))
+                return()
+
             for (i in p) {
                 cat('\n')
                 cat(i, ". ", rv.files[i], '\n')
@@ -86,19 +73,48 @@ for (sys.file in sys.files) {
                     cat(prop, ':',  header(headers[[i]], prop), '\n')
             }
 
+            datai <- data[[p[1]]]
+            dataj <- data[[p[2]]]
+            
+            xlim <- range(c(datai[,1], dataj[,1]))
+            ylim <- range(c(datai[,2], dataj[,2]))
+            plot(datai[,1], datai[,2], col='red', pch=19, xlim=xlim, ylim=ylim)
+            points(dataj[,1], dataj[,2], col='blue', pch=19)
+            
+            
             cat("\nWhat do? [0 = keep both, 1 = keep first, 2 = keep second] ")
             resp <- readLines(n=1)
             if (resp == 1) {
-                #delete.file(rv.files[p[2]])
-                rv.files <- rv.files[-p[2]]
-                rv.lines <- rv.lines[-p[2]]
+                changed <<- TRUE
+                cat("Removing ", rv.files[p[2]], '\n')
+                remove <<- c(remove, p[2])
             } else if (resp == 2) {
-                #delete.file(rv.files[p[1]])
-                rv.files <- rv.files[-p[1]]
-                rv.lines <- rv.lines[-p[1]]
+                changed <<- TRUE
+                cat("Removing ", rv.files[p[1]], '\n')
+                remove <<- c(remove, p[1])
             }
         })
-        print(rv.files)
+
+        if (length(remove) > 0) {
+            for (rv.file in rv.files[remove])
+                file.remove(rv.file)
+
+            rv.lines <- rv.lines[-remove]
+            rv.files <- rv.files[-remove]
+
+            for (i in 1:length(rv.files)) {
+                new.name <- str_replace(rv.files[i], "_(\\d)_", sprintf("_%d_", i))
+                file.rename(rv.files[i], new.name)
+                rv.files[i] <- new.name
+                rv.lines[i] <- str_join("RV[]\t", new.name)
+            }
+
+            conn <- file(sys.file, 'w')
+            writeLines(c(sys.props, "\n"), conn)
+            writeLines(rv.lines, conn)
+            close(conn)
+        }
+        
     }
 
    
