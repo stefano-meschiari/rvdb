@@ -1,7 +1,7 @@
 require(stringr)
 
 tbl <- function(t) {
-    return(apply(data[[i]], 1, function(row) {
+    return(apply(t, 1, function(row) {
                 return(str_join(sprintf("%f", row), collapse='\t'))
             }))
 }

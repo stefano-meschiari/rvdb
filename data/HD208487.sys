@@ -1,0 +1,13 @@
+# Data from http://exoplanetarchive.ipac.caltech.edu/
+
+Name	HD 208487
+Mass	1.13
+HD	HD 208487
+HIP	HIP 108375
+Teff	6067
+RA	329.332703
+Dec	-37.763622
+
+
+
+RV[]	HD208487_1_AAT.vels

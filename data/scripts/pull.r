@@ -1,7 +1,7 @@
 # Pulls RV data from the Exoplanet Archive.
 require(stringr)
 source('common.r')
-wait <- 2
+wait <- 0.5
 
 if (!exists('plhost.downloaded'))
     plhost.downloaded <- c()
@@ -17,7 +17,7 @@ prop.mangling <- list(
     TELESCOPE = c(KECK="KECK", AAT="AAT", LICK="LICK", SHANE="LICK", HET="HET",
         TAUTENBERG="TAUTENBERG", JENSCH="JENSCH", CFHT="CFHT", HJS="HJS", ESO="ESO",
         MCDONALD="MCDONALD", KUEYEN="VLT", EULER="EULER", SUBARU="SUBARU", MAGELLAN="MAGELLAN",
-        TILLINGHAST="TILLINGHAST", ANGLO="AAT", NOT="NOT")       
+        TILLINGHAST="TILLINGHAST", ANGLO="AAT", NOT="NOT", SMITHSONIAN="SMITHSONIAN", `1.93M`="ELODIE")       
 )
 
 props <- c(
@@ -55,7 +55,6 @@ extract.prop <- function(tbl.lines, property, mangle=FALSE) {
 
 create.db <- function(table) {
     table <- table[table$st_nrvc > 0, ]
-
     data.url <- "http://exoplanetarchive.ipac.caltech.edu/cgi-bin/ExoOverview/nph-ExoOverview?objname=%s&label&aliases&exo&orb&ppar&tran&disc&ospar&ts&type=CONFIRMED_PLANET"
     table.url <- "http://exoplanetarchive.ipac.caltech.edu/"
     
@@ -66,7 +65,10 @@ create.db <- function(table) {
         host <- str_replace_all(row['pl_hostname'], " ", "")
         
         cat('Downloading ', row['pl_hostname'], '...\n')
-        conn <- url(sprintf(data.url, URLencode(str_join(row['pl_hostname'], ' ', row['pl_letter']))))
+
+        page.url <- sprintf(data.url, URLencode(str_join(row['pl_hostname'], ' ', row['pl_letter'])))
+        
+        conn <- url(page.url)
         string <<- str_join(readLines(conn), collapse="\n")
         close(conn)
         
@@ -104,20 +106,15 @@ create.db <- function(table) {
             instrument <- extract.prop(lines, "INSTRUMENT")
             observatory <- extract.prop(lines, "OBSERVATORY_SITE")
             value.units <- extract.prop(lines, "VALUE_UNITS")
-            if (value.units == "km/s") {
-                data <- unname(t(sapply(data, function(data) str_match_all(data, "([0-9\\-\\.]+)")[[1]][,1])))
-                data[,2] <- data[,2] * 1000
-                data[,2] <- data[,2] - median(data[,2])
-                data <- tbl(data)
-                print(data)
-                stop()
-            }
+
+            
             
             fn <- sprintf("%s_%d_%s.vels",
                          host,
                          cnt,
                          str_replace_all(telescope.code, " ", "_"))
 
+            
             f <- file(fn, "w")
             cat(file=f, sprintf("# telescope = %s\n", telescope))
             cat(file=f, sprintf("# instrument = %s\n", instrument))
@@ -125,6 +122,8 @@ create.db <- function(table) {
             cat(file=f, sprintf("# reference = %s\n", reference))
             cat(file=f, sprintf("# bibcode = %s\n", bibcode))
             cat(file=f, sprintf("# source = %s\n", tbl.url))
+            cat(file=f, sprintf("# value_units = %s\n", value.units))
+            cat(file=f, sprintf("# nexsci_url = %s\n", page.url))
             cat(file=f, data, sep="\n")
             
             cnt <- cnt+1
@@ -136,5 +135,6 @@ create.db <- function(table) {
         close(sys)
         Sys.sleep(wait)
     })
-    
 }
+
+create.db(planets.table())

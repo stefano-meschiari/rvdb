@@ -1,0 +1,15 @@
+# Data from http://exoplanetarchive.ipac.caltech.edu/
+
+Name	HD 168443
+Mass	0.99
+HD	HD 168443
+HIP	HIP 89844
+Teff	5491
+RA	275.016388
+Dec	 -9.595722
+
+
+
+RV[]	HD168443_1_KECK.vels
+RV[]	HD168443_2_HJS.vels
+RV[]	HD168443_3_EULER.vels

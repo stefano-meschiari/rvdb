@@ -1,9 +1,0 @@
-# telescope = 10M KECK I
-# instrument = HIRES
-# observatory = MAUNA KEA, HAWAII
-# reference = SOZZETTI ET AL. 2006 (A&A, 449, 417)
-# bibcode = 2006A&A...449..417S
-# source = http://exoplanetarchive.ipac.caltech.edu//data/ExoData/0046/0046076/data/UID_0046076_RVC_002.tbl
-  2451291.36542            49.319                         0.012
-  2451293.37376            49.312                         0.014
-  2451545.63921            49.088                         0.009
