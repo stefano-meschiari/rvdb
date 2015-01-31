@@ -1,0 +1,14 @@
+# Data from http://exoplanetarchive.ipac.caltech.edu/
+
+Name	51 Peg
+Mass	1.12
+HD	HD 217014
+HIP	HIP 113357
+Teff	5793
+RA	344.366577
+Dec	 20.768833
+
+
+
+RV[]	51Peg_1_LICK.vels
+RV[]	51Peg_2_ELODIE.vels

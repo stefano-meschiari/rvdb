@@ -1,0 +1,12 @@
+# Data from http://exoplanetarchive.ipac.caltech.edu/
+
+Name	TrES-1
+Mass	0.88
+HD	
+HIP	
+Teff	5230
+RA	286.041017
+Dec	 36.632649
+
+RV[]	TrES-1_1_SUBARU.vels
+RV[]	TrES-1_2_KECK.vels

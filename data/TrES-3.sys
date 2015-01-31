@@ -1,0 +1,13 @@
+# Data from http://exoplanetarchive.ipac.caltech.edu/
+
+Name	TrES-3
+Mass	0.93
+HD	
+HIP	
+Teff	5650
+RA	268.029292
+Dec	 37.546139
+
+
+
+RV[]	TrES-3_1_KECK.vels
