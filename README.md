@@ -1,4 +1,4 @@
-# rvdb
+# rvdb 0.1
 
 ## What it is
 **rvdb** is a repository of the radial velocity datasets that have been published in peer-reviewed literature, and is the default set of data that is distributed with [Systemic](http://www.stefanom.org/systemic). The repository is browsable online at http://www.rvdb.io or using [Systemic Live](http://www.stefanom.org/systemic-online), and is easily downloadable in its entirety with git:
@@ -6,6 +6,9 @@
 ```
 git clone https://github.com/stefano-meschiari/rvdb.git
 ```
+or by downloading the [.tar.gz archive](https://github.com/stefano-meschiari/rvdb/raw/master/rvdb.tar.gz).
+
+**Note**: This database is currently in a pre-release version. Please check the data carefully before using it for scientific work. If you notice any issues with one of the datasets, please do a pull request on this repository, [file a bug](https://github.com/stefano-meschiari/rvdb/issues), or [drop me a line](http://www.stefanom.org).
 
 ## What it contains
 The repository is structured as a collection of plain-text files that can easily be imported in [Systemic](http://www.stefanom.org/systemic) or any other analysis program. Each star is associated with a file with extension .sys (system); this file contains a few stellar parameters and references to the radial velocity files associated with the star.
