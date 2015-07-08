@@ -1,13 +1,13 @@
-RVDB-WEB=../rvdb-web	
-
-all: rvdb.tar.gz data/data.json web
+all: rvdb.tar.gz app
 
 rvdb.tar.gz: data/*.sys data/*.vels
 	tar -cvzf rvdb.tar.gz data
 
-data/data.json: data/*.sys data/*.vels
-	cd scripts; Rscript json.r
+app: app/combined_star_data.rds app/data.json
 
-web: data/data.json
-	cp -R data $(RVDB-WEB)
-	cp rvdb.tar.gz $(RVDB-WEB)
+app/combined_star_data.rds: data/*.sys data/*.vels
+	cd app; Rscript ../R/make.r
+
+app/data.json: data/*.sys data/*.vels
+	cd app; Rscript ../R/json.r
+

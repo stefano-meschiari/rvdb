@@ -1,16 +1,25 @@
 require(stringr)
 require(rjson)
-source('utils.r')
 
 data.path <- '../data/'
-sys.files <- Sys.glob(data.path %.% "*.sys")
+sys.files <- Sys.glob(str_c(data.path, "*.sys"))
 
 data <- list()
+csapply <- function(X, FUN, ..., simplify=TRUE, USE.NAMES=TRUE) {    
+    l <- sapply(X=X, FUN=FUN, ..., simplify=simplify, USE.NAMES=USE.NAMES)
+    l <- Filter(Negate(is.null), l)
+
+    if (!identical(simplify, FALSE) && length(l)) 
+        return(simplify2array(l, higher = (simplify == "array")))
+    else 
+        return(l)
+}
+
 
 for (file in sys.files) {
     print(file)
     lines <- readLines(file)
-    props <- capply(lines, function(l) {
+    props <- csapply(lines, function(l) {
         if (str_detect(l, '#')) 
             return()
         
@@ -30,11 +39,11 @@ for (file in sys.files) {
     props.list$rvFiles <- props.rvs
 
     props.list$rv <- lapply(props.rvs, function(f) {
-        return(read.table(data.path %.% f))
+        return(read.table(str_c(data.path, f)))
     })
 
     props.list$rvProps <- lapply(props.rvs, function(f) {
-        lines <- readLines(data.path %.% f)
+        lines <- readLines(str_c(data.path, f))
         lines <- lines[str_detect(lines, '#')]
         return(sapply(lines, function(l) {
             p <- str_trim(str_match(l, '#(.+?)=(.+)'))
@@ -47,4 +56,4 @@ for (file in sys.files) {
     data <- c(data, props.list)
 }
 
-cat(toJSON(data), file=data.path %.% 'data.json')
+cat(toJSON(data), file='data.json')
