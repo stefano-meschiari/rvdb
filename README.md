@@ -1,7 +1,7 @@
 # rvdb 0.1
 
 ## What it is
-**rvdb** is a repository of the radial velocity datasets that have been published in peer-reviewed literature, and is the default set of data that is distributed with [Systemic](http://www.stefanom.org/systemic). The repository is browsable online at http://www.rvdb.io or using [Systemic Live](http://www.stefanom.org/systemic-online), and is easily downloadable in its entirety with git:
+**rvdb** is a repository of the radial velocity datasets that have been published in peer-reviewed literature, and will be the default set of data that is distributed with [Systemic](http://www.stefanom.org/systemic). The repository is browsable online at http://www.rvdb.io or using [Systemic Live](http://www.stefanom.org/systemic-online), and is easily downloadable in its entirety with git:
 
 ```
 git clone https://github.com/stefano-meschiari/rvdb.git

@@ -27,7 +27,7 @@ star <- function(input, output, session) {
   })
   
   output$rvs <- renderDataTable({ datatable(dataset()$data,
-                                           options=list(pageLength=50, digits=3),
+                                           options=list(pageLength=5000, digits=3),
                                            filter='top') })
 
   output$plot_rvs <- renderPlot({
