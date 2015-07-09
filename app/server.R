@@ -53,7 +53,7 @@ all_stars <- function(input, output, session) {
     if (str_trim(input$search) == "")
       db
     else if (!str_detect(input$search, '[=><%]')) {
-      db %<>% filter(name_match(name, input$search))
+      db <- db %>% filter(name_match(name, input$search))
     }
     else {
       tryCatch({

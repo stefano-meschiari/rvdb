@@ -17,9 +17,9 @@ shinyUI(fluidPage(
            br(),
            p(
              align='right',
-             a(href='rvdb.tar.gz', class="btn btn-primary", 'Download database'),
-             a(href='https://github.com/stefano-meschiari/rvdb', class="btn btn-success", 'Contribute on GitHub'),
-             a(href='https://github.com/stefano-meschiari/rvdb/blob/master/README.md', class='btn btn-info', 'Help')             
+             a(href='rvdb.tar.gz', class="btn btn-primary", 'Download database', target='_blank'),
+             a(href='https://github.com/stefano-meschiari/rvdb', class="btn btn-success", 'Contribute on GitHub', target='_blank'),
+             a(href='https://github.com/stefano-meschiari/rvdb/blob/master/README.md', class='btn btn-info', 'Help', target='_blank')             
            )
            )
   ),
