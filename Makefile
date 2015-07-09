@@ -1,13 +1,13 @@
-all: rvdb.tar.gz app
+all: app/rvdb.tar.gz app
 
-rvdb.tar.gz: data/*.sys data/*.vels
-	tar -cvzf rvdb.tar.gz data
+app/rvdb.tar.gz: data/*.sys data/*.vels R/make.r
+	tar -cvzf app/rvdb.tar.gz data
 
 app: app/combined_star_data.rds app/data.json
 
-app/combined_star_data.rds: data/*.sys data/*.vels
+app/combined_star_data.rds: data/*.sys data/*.vels R/make.r
 	cd app; Rscript ../R/make.r
 
-app/data.json: data/*.sys data/*.vels
+app/data.json: data/*.sys data/*.vels R/make.r
 	cd app; Rscript ../R/json.r
 
