@@ -1,5 +1,6 @@
 library(shiny)
 library(DT)
+library(stringr)
 
 textInput2 <- function (inputId, value = "", placeholder="") 
 {
@@ -9,6 +10,7 @@ textInput2 <- function (inputId, value = "", placeholder="")
 }
 
 stars <- readRDS('combined_star_data.rds')$name
+stars <- stars[order(str_to_upper(stars))]
 
 shinyUI(fluidPage(
   fluidRow(
@@ -32,7 +34,7 @@ shinyUI(fluidPage(
                        fluidRow(
                          column(12,
                                 textInput2('search', '', 'Search'),
-                                helpText('Example: mass > 2, teff > 4000 & teff < 5000, mass > 2 | mass < 1, telescopes %~% \'JENSCH\'')
+                                helpText('Example: HD 170693, mass > 2, teff > 4000 & teff < 5000, mass > 2 | mass < 1, telescopes %~% \'JENSCH\'')
                                 )
                        ),
                        
@@ -57,7 +59,7 @@ shinyUI(fluidPage(
                                 textInput('y_axis', 'Y:', 'teff')
                                 ),
                          column(2,
-                                textInput('group_by', 'Group by:', 'ndata')
+                                textInput('group_by', 'Group by:', NULL)
                                 )
 
                        ),

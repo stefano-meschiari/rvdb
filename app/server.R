@@ -5,8 +5,9 @@ library(dplyr)
 library(ggplot2)
 
 `%~%` <- str_detect
-theme_set(theme_gray(base_size=20))
-#theme_update(axis.title.x = element_text(vjust=0), axis.title.y = element_text(vjust=1, angle=90))
+theme_set(theme_gray(base_size=18))
+
+theme_update(axis.title.x = element_text(vjust=0), axis.title.y = element_text(vjust=1, angle=90))
 
 name_match <- function(string, pattern) {
   return(str_detect(str_to_upper(str_replace_all(string, ' ', '')),
@@ -16,8 +17,6 @@ name_match <- function(string, pattern) {
 combined_db <- readRDS('combined_star_data.rds') %>%
   select(-fn) %>%
   mutate(name=str_c("<button class='btn btn-default star' onClick=javascript:starClick(this)>", name, '</button>'))
-
-print(combined_db)
 
 full_db <- readRDS('all_data.rds')
 
@@ -31,11 +30,18 @@ star <- function(input, output, session) {
                                            filter='top') })
 
   output$plot_rvs <- renderPlot({
-    ggplot(dataset()$data[input$rvs_rows_all, ]) +
+    
+    data <- if (is.null(input$rvs_rows_all))
+      dataset()$data
+    else
+      dataset()$data[input$rvs_rows_all, ]
+    
+    ggplot(data) +
       geom_point(aes(x=time, y=rv, color=telescope), size=4) +
       geom_errorbar(aes(x=time, ymin=rv-error, ymax=rv+error, color=telescope)) +
       xlab("Time [JD]") +
       ylab("RV [m/s]")
+    
   })
 
   output$info <- renderTable({ dataset()$props })
@@ -53,11 +59,13 @@ all_stars <- function(input, output, session) {
     if (str_trim(input$search) == "")
       db
     else if (!str_detect(input$search, '[=><%]')) {
-      db <- db %>% filter(name_match(name, input$search))
+      db <- db %>% filter(name_match(name, input$search) | name_match(hd, input$search))
     }
     else {
       tryCatch({
-        p <- eval(parse(text=str_c("~ ", input$search)))
+        s <- str_replace_all(input$search, "\\~", "%~%")
+        print(s)
+        p <- eval(parse(text=str_c("~ ", s)))
         filter_(db, p)
       }, error=function(e) { print(e); db })
     }    
@@ -109,7 +117,7 @@ all_stars <- function(input, output, session) {
     return(p)
   })
   
-  output$table <- renderDataTable(datatable({ dataset() }, escape=FALSE, selection='single'))
+  output$table <- renderDataTable(datatable({ dataset() }, escape=FALSE, selection='none'))
   output$plot <- renderPlot({ print(plotSubset()) })
   
 }
