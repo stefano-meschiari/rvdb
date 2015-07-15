@@ -1,7 +1,12 @@
+# Rebuilds database 
+systemic()
 library(plyr)
 library(dplyr)
 library(readr)
-
+library(ggplot2)
+library(astroFns)
+source("periodogram.r")
+      
 rms <- function(a) sqrt(sum(a^2)/length(a))
 
 # Read all the RV observations
@@ -57,7 +62,11 @@ write.csv(file='combined_star_data.csv', combined_star_data)
 
 all_data <- lapply(Sys.glob("../data/*.sys"), function(f) {
   props <- props(readLines(f))
-
+  
+  per <- attr(plotPeriodogram(f), 'peaks')
+  if (!is.null(per))
+    per <- per[1:min(5, nrow(per)), 1:3] 
+  
   data <- c()
   sets <- lapply(str_c('../data/', props$linked), function(f) {
     data <<- rbind(data,
@@ -70,12 +79,15 @@ all_data <- lapply(Sys.glob("../data/*.sys"), function(f) {
   })
 
   data <- data[order(data$time), ]
+  data <- cbind(data, date=sapply(data$time, function(x) as.character(jd2ymd(x))))
   row.names(data) <- NULL
+  info <- combined_star_data[combined_star_data$fn == basename(f), ]
 
-  return(list(props=do.call(data.frame, as.list(props$props)),
+  return(list(props=info,
            name=props$props['name'],
            data=data,
-           sets=sets))
+           sets=sets,
+           periodogram=per))
 })
 
 names(all_data) <- sapply(all_data, function(l) l$name)

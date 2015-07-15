@@ -1,0 +1,101 @@
+body {
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+
+.dataTables_filter {
+  display:none
+}
+
+input[type=search] {
+  font-size: 70%
+}
+
+#title-container {
+  height:70px;
+  padding-left:20px;
+  background-color:rgb(42, 45, 51);
+  line-height:1;
+}
+
+#title-container #menu {
+  float:left !important;
+  background-color:rgb(229, 98, 84);
+  color:white;
+  border:none;
+  font-size:2rem;
+}
+
+#title-container .toolbar-btn {
+  height:40px;
+  margin-right:15px;
+  margin-top:15px;
+  margin-bottom:15px;
+  background:rgb(229, 98, 84);
+  display:block;
+  float:right;
+  line-height:40px;
+  padding-left:15px;
+  padding-right:15px;
+  text-transform:uppercase;  
+  color:white;
+}
+
+.title {
+  font-size:4rem;
+  font-weigth:700;
+  color:rgb(229, 98, 84);
+  margin-top:15px;
+}
+
+#tabs {
+  margin-left:-15px;
+  margin-right:-15px;
+  background-color:rgb(87, 92, 97);
+  padding-top:10px;
+  padding-left:15px;
+}
+
+#tabs li a {
+  color:white;
+  text-transform:uppercase;
+  background-color:rgb(181, 177, 174);
+  margin-right:5px;
+}
+
+#tabs li.active a {
+  background-color:white;
+  color:black;
+}
+
+h2 {
+  color:rgb(219, 214, 211);
+  text-transform:uppercase;
+  font-size:2.5rem;
+  font-weight:700;
+}
+
+.btn {
+  border-radius:0px;
+  margin-right:15px;
+}
+
+th {
+  color:rgb(229, 98, 84);
+}
+
+.shiny-plot-output img, .shiny-image-output img {
+  border:1px solid #ccc;
+  background:white;
+}
+
+.form-control {
+  border-radius:0px;
+}
+
+.well {
+  overflow-x:scroll;
+}
+
+.selectize-input {
+  border-radius:0px;
+}

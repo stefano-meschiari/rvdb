@@ -4,6 +4,7 @@ library(stringr)
 library(dplyr)
 library(ggplot2)
 
+
 `%~%` <- str_detect
 theme_set(theme_gray(base_size=18))
 
@@ -42,6 +43,21 @@ star <- function(input, output, session) {
       xlab("Time [JD]") +
       ylab("RV [m/s]")
     
+  })
+
+  output$plot_periodogram <- renderImage({
+    list(src=str_c('www/img/periodograms/', str_replace_all(input$star, " ", ""),
+                   '.sys.png'), width=600, height=400)
+  }, deleteFile=FALSE)
+
+  output$periodogram <- renderTable({
+    data <- as.data.frame(dataset()$periodogram)
+    data[,'period'] <- sprintf("%.2f", data[,'period'])
+    data[,'power'] <- sprintf("%.2f", data[,'power'])
+    
+    data[, 'fap'] <- str_c(str_replace(sprintf("~ %.2e", data[,'fap']), "e", "x10^"))
+    setNames(data,
+                    c('period', 'power', 'false alarm probability'))
   })
 
   output$info <- renderTable({ dataset()$props })
